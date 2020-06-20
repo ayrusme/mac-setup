@@ -8,10 +8,12 @@
 
 ## terminal stuff
 
+```
 chsh -s /bin/zsh
 
 brew install romkatv/powerlevel10k/powerlevel10k
 echo 'source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc
+```
 
 ## homebrew formulae
 
