@@ -75,3 +75,8 @@ git config user.email “ayrusme@gmail.com”
 ```
 pip3 install  pipenv
 ```
+
+### touch id for sudo
+```
+https://apple.stackexchange.com/a/306324
+```
