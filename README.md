@@ -19,10 +19,12 @@ echo 'source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc
 
 ```
 brew cask install google-chrome
-brew cask install visual-studio-code
 brew install python
 brew tap mongodb/brew
 brew install mongodb-community
+brew cask install visual-studio-code
+brew cask install intellij-idea-ce
+
 brew services start mongodb-community
 
 brew install mysql
