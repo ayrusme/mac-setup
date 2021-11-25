@@ -41,6 +41,9 @@ brew cask install postman
 brew install jupyter
 
 brew cask install docker
+brew install kubectl
+brew install kubectx
+brew install fzf
 
 brew cask install android-platform-tools
 brew install scrcpy
