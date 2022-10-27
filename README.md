@@ -20,32 +20,32 @@ echo 'source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions
 ## homebrew formulae
 
 ```
-brew cask install google-chrome
+brew install --cask google-chrome
 brew install python
 brew tap mongodb/brew
 brew install mongodb-community
-brew cask install visual-studio-code
-brew cask install intellij-idea-ce
+brew install --cask visual-studio-code
+brew install --cask intellij-idea-ce
 
 brew services start mongodb-community
 
 brew install mysql
 brew services start mysql
-brew cask install mysqlworkbench
-brew cask install robo-3t
+brew install --cask mysqlworkbench
+brew install --cask robo-3t
 
-brew cask install java
+brew install --cask java
 
-brew cask install postman
+brew install --cask postman
 
 brew install jupyter
 
-brew cask install docker
+brew install --cask docker
 brew install kubectl
 brew install kubectx
 brew install fzf
 
-brew cask install android-platform-tools
+brew install --cask android-platform-tools
 brew install scrcpy
 ```
 
