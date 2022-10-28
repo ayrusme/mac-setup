@@ -32,6 +32,7 @@ brew services start mongodb-community
 brew install mysql
 brew services start mysql
 brew install --cask mysqlworkbench
+brew install --cask mysql-shell
 brew install --cask robo-3t
 
 brew install --cask java
