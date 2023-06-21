@@ -15,6 +15,8 @@ brew install romkatv/powerlevel10k/powerlevel10k
 echo "source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 echo 'source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh' >>! ~/.zshrc
+
+ssh-keygen -t ecdsa -b 521
 ```
 
 ## homebrew formulae
@@ -92,3 +94,4 @@ pip3 install  pipenv
 ```
 https://apple.stackexchange.com/a/306324
 ```
+
