@@ -12,7 +12,7 @@
 chsh -s /bin/zsh
 
 brew install romkatv/powerlevel10k/powerlevel10k
-echo 'source /usr/local/opt/powerlevel10k/powerlevel10k.zsh-theme' >>! ~/.zshrc
+echo "source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 echo 'source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh' >>! ~/.zshrc
 ```
@@ -45,6 +45,8 @@ brew install --cask docker
 brew install kubectl
 brew install kubectx
 brew install fzf
+brew install helm
+brew install minikube
 
 brew install --cask android-platform-tools
 brew install scrcpy
