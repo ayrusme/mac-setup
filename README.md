@@ -50,6 +50,8 @@ brew install minikube
 
 brew install --cask android-platform-tools
 brew install scrcpy
+
+brew install --cask whatsapp
 ```
 
 ## UI Tweaks
