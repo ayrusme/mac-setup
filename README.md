@@ -49,6 +49,7 @@ brew install kubectx
 brew install fzf
 brew install helm
 brew install minikube
+brew install stern
 
 brew install --cask android-platform-tools
 brew install scrcpy
