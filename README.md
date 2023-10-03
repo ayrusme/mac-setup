@@ -54,6 +54,7 @@ brew install stern
 brew install --cask android-platform-tools
 brew install scrcpy
 
+brew install --cask obsidian
 brew install --cask whatsapp
 ```
 
