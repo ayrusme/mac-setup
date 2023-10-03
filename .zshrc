@@ -11,10 +11,12 @@ export PIPENV_SHELL=/bin/zsh
 alias batt='adb shell dumpsys battery | grep level'
 
 notify () {
-arg=$1
-content=${arg:-task was done}
-curl -X POST -H 'Content-type: application/json' --data "{\"text\":\"$content\"}" SLACK_WEBHOOK_URL_HERE
+    arg=$1
+    content=${arg:-task was done}
+    # curl -X POST -H 'Content-type: application/json' --data "{\"text\":\"$content\"}" SLACK_WEBHOOK_URL_HERE
+    osascript -e "display notification \"Complete\" with title \"$content\""
 }
+
 setalarm() {
     sleep $(echo "$1 * 60" | bc)
     say "The clocks run out, times up, over, blaow"
