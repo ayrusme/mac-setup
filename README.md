@@ -56,6 +56,7 @@ brew install scrcpy
 
 brew install --cask obsidian
 brew install --cask whatsapp
+brew install --cask amethyst
 ```
 
 ## UI Tweaks
