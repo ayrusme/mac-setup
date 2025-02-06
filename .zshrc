@@ -25,7 +25,9 @@ mkcd() { mkdir -p "$1" && cd "$1"; }
 
 # git
 
-gitconfig() { git config user.name "Surya Raman" && git config user.email "ayrusme@gmail.com" }
+gitconfig() {
+    git config user.name "Surya Raman" && git config user.email "ayrusme@gmail.com"  && git config user.signingkey 3A650300C9A64663
+}
 alias curbn='git branch --show-current | pbcopy'
 pstag() {
     local branch_name=$(git branch --show-current)
