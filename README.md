@@ -24,6 +24,9 @@ ssh-keygen -t ecdsa -b 521
 ```
 brew install --cask google-chrome
 brew install python
+[Node Version Manager](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating)
+[Clipy](https://github.com/Clipy/Clipy)
+brew install gnupg
 brew tap mongodb/brew
 brew install mongodb-community
 brew install --cask visual-studio-code
