@@ -35,7 +35,12 @@ brew install --cask intellij-idea-ce
 brew services start mongodb-community
 
 brew install mysql
-brew services start mysql
+<!-- brew services start/run mysql -->
+brew install postgresql
+<!-- brew services start/run postgresql -->
+# do not forget to create the default user for postgres
+# password should be "admin"
+<!-- /opt/postgresql@14/bin/createuser -s postgres -->
 brew install --cask mysqlworkbench
 brew install --cask mysql-shell
 brew install --cask robo-3t
