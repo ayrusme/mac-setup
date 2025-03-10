@@ -10,7 +10,7 @@
 
 ```
 chsh -s /bin/zsh
-
+brew install --cask iterm2
 brew install romkatv/powerlevel10k/powerlevel10k
 echo "source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
@@ -23,6 +23,7 @@ ssh-keygen -t ecdsa -b 521
 
 ```
 brew install --cask google-chrome
+brew install --cask arc
 brew install python
 [Node Version Manager](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating)
 [Clipy](https://github.com/Clipy/Clipy)
@@ -65,6 +66,7 @@ brew install scrcpy
 brew install --cask obsidian
 brew install --cask whatsapp
 brew install --cask amethyst
+brew install --cask cloudflare-warp
 ```
 
 ## UI Tweaks
@@ -87,6 +89,11 @@ defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
 ### Quit finder using cmd-q
 ```
 defaults write com.apple.finder QuitMenuItem -bool true
+```
+
+### DNS
+```
+networksetup -setdnsservers Wi-Fi 1.1.1.1 1.0.0.1 2606:4700:4700::1111 2606:4700:4700::1001
 ```
 
 ### git config
