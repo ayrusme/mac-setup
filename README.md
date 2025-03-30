@@ -30,8 +30,9 @@ brew install python
 brew install gnupg
 brew tap mongodb/brew
 brew install mongodb-community
-brew install --cask visual-studio-code
-brew install --cask intellij-idea-ce
+brew install --cask cursor
+<!-- brew install --cask visual-studio-code -->
+<!-- brew install --cask intellij-idea-ce -->
 
 brew services start mongodb-community
 
@@ -67,6 +68,8 @@ brew install --cask obsidian
 brew install --cask whatsapp
 brew install --cask amethyst
 brew install --cask cloudflare-warp
+brew install stats
+brew install --cask logi-options+
 ```
 
 ## UI Tweaks
@@ -76,7 +79,7 @@ brew install --cask cloudflare-warp
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 ```
 
-### keyboard and menu bar
+### keyboard, trackpad, mouse, and menu bar
 
 ```
 defaults write com.apple.menuextra.battery ShowPercent YES
@@ -84,6 +87,7 @@ killall SystemUIServer
 
 defaults write -g InitialKeyRepeat -int 10 # normal minimum is 15 (225 ms)
 defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
+defaults write -g com.apple.mouse.scaling -float 5.0
 ```
 
 ### Quit finder using cmd-q
@@ -112,4 +116,3 @@ pip3 install  pipenv
 ```
 https://apple.stackexchange.com/a/306324
 ```
-
