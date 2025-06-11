@@ -116,3 +116,8 @@ pip3 install  pipenv
 ```
 https://apple.stackexchange.com/a/306324
 ```
+
+### disable sleep ( useful in clamshell )
+```
+sudo pmset disablesleep 1
+```
