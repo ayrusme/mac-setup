@@ -50,4 +50,4 @@ kexp() {
     echo "pod name is $pod_name"
     kubectl exec -it $pod_name -- /bin/bash
 }
-export KUBE_EDITOR='code --wait'
+export KUBE_EDITOR='cursor --wait'
