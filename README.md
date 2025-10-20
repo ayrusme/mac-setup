@@ -70,6 +70,8 @@ brew install --cask amethyst
 brew install --cask cloudflare-warp
 brew install stats
 brew install --cask logi-options+
+brew install defaultbrowser
+# https://apps.apple.com/us/app/currentkey-stats/id1456226992?mt=12&pt=119982183&ct=currentkey
 ```
 
 ## UI Tweaks
