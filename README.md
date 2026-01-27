@@ -30,8 +30,8 @@ brew install python
 brew install gnupg
 brew tap mongodb/brew
 brew install mongodb-community
-brew install --cask cursor
-<!-- brew install --cask visual-studio-code -->
+brew install --cask visual-studio-code
+<!-- brew install --cask cursor -->
 <!-- brew install --cask intellij-idea-ce -->
 
 brew services start mongodb-community
@@ -46,11 +46,9 @@ brew install postgresql
 brew install --cask mysqlworkbench
 brew install --cask mysql-shell
 brew install --cask robo-3t
-
 brew install --cask java
 
 brew install --cask postman
-
 brew install jupyter
 
 brew install --cask docker
@@ -71,6 +69,7 @@ brew install --cask cloudflare-warp
 brew install stats
 brew install --cask logi-options+
 brew install defaultbrowser
+brew install meetingbar
 # https://apps.apple.com/us/app/currentkey-stats/id1456226992?mt=12&pt=119982183&ct=currentkey
 ```
 
