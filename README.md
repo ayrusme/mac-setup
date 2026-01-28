@@ -80,6 +80,11 @@ brew install meetingbar
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 ```
 
+### Disable reordering Spaces based on most recent use
+```
+defaults write com.apple.dock mru-spaces -bool false
+```
+
 ### keyboard, trackpad, mouse, and menu bar
 
 ```
