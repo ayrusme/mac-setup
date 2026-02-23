@@ -121,6 +121,8 @@ pip3 install  pipenv
 ### touch id for sudo
 ```
 https://apple.stackexchange.com/a/306324
+
+sed "s/^#auth/auth/" /etc/pam.d/sudo_local.template | sudo tee /etc/pam.d/sudo_local
 ```
 
 ### disable sleep ( useful in clamshell )
