@@ -35,6 +35,11 @@ brew install --cask cloudflare-warp
 brew install --cask logi-options+
 brew install --cask meetingbar
 brew install --cask mysqlworkbench
+brew install --cask mysql-shell
+brew install --cask postman
+brew install --cask robo-3t
+brew install --cask java
+brew install --cask arc
 brew install --cask stats
 brew install --cask claude-code
 brew install --cask blackhole-2ch
@@ -66,6 +71,9 @@ brew install defaultbrowser
 brew install ical-buddy
 brew install pandoc
 brew install gnupg
+brew install jupyter
+brew install --cask android-platform-tools
+brew install scrcpy
 ```
 
 ### DevOps & Containers
