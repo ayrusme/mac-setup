@@ -1,170 +1,111 @@
-# macOS Setup Script
+# macOS Setup
 
 Last updated: 2026-04-01
 
-## Homebrew
+## 1. Install Homebrew
 
 ```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 ```
 
-## Terminal
+## 2. Install everything from Brewfile
+
+```bash
+brew bundle --file=Brewfile
+```
+
+## 3. Terminal setup
 
 ```bash
 chsh -s /bin/zsh
-brew install --cask iterm2
-brew install romkatv/powerlevel10k/powerlevel10k
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 echo "source $(brew --prefix)/opt/powerlevel10k/powerlevel10k.zsh-theme" >>~/.zshrc
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 echo 'source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh' >>! ~/.zshrc
-
 ssh-keygen -t ecdsa -b 521
-```
-
-## Homebrew Casks (GUI Apps)
-
-```bash
-brew install --cask iterm2
-brew install --cask google-chrome
-brew install --cask visual-studio-code
-brew install --cask cursor
-brew install --cask obsidian
-brew install --cask docker-desktop
-brew install --cask amethyst
-brew install --cask cloudflare-warp
-brew install --cask logi-options+
-brew install --cask meetingbar
-brew install --cask mysqlworkbench
-brew install --cask mysql-shell
-brew install --cask postman
-brew install --cask robo-3t
-brew install --cask java
-brew install --cask arc
-brew install --cask stats
-brew install --cask claude-code
-brew install --cask blackhole-2ch
-```
-
-[Clipy](https://github.com/Clipy/Clipy) — clipboard manager (download from GitHub releases)
-
-## Homebrew Formulae
-
-### Languages & Runtimes
-
-```bash
-brew install python
-brew install node
-brew install asdf
-brew install elixir
 ```
 
 [Node Version Manager](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating)
 
-### CLI Tools
+## 4. macOS defaults
 
 ```bash
-brew install gh
-brew install jq
-brew install fzf
-brew install shellcheck
-brew install defaultbrowser
-brew install ical-buddy
-brew install pandoc
-brew install gnupg
-brew install jupyter
-brew install --cask android-platform-tools
-brew install scrcpy
-```
-
-### DevOps & Containers
-
-```bash
-brew install kubectl
-brew install kubectx
-brew install helm
-brew install minikube
-brew install stern
-```
-
-### Databases
-
-```bash
-brew tap mongodb/brew
-brew install mongodb-community
-brew install mysql
-brew install postgresql@14
-```
-
-### AI & ML
-
-```bash
-brew install ollama
-brew install whisper-cpp
-brew install sox
-brew install gemini-cli
-```
-
-## UI Tweaks
-
-### Disable "Are you sure you want to open this application?" dialog
-
-```bash
+# Disable "Are you sure you want to open this application?" dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
-```
 
-### Disable reordering Spaces based on most recent use
-
-```bash
+# Disable reordering Spaces based on most recent use
 defaults write com.apple.dock mru-spaces -bool false
-```
 
-### Keyboard, trackpad, mouse
-
-```bash
+# Keyboard: fast repeat
 defaults write -g InitialKeyRepeat -int 10   # normal minimum is 15 (225 ms)
 defaults write -g KeyRepeat -int 1            # normal minimum is 2 (30 ms)
+
+# Mouse speed
 defaults write -g com.apple.mouse.scaling -float 3.0
-```
 
-### Quit Finder using Cmd-Q
-
-```bash
+# Quit Finder using Cmd-Q
 defaults write com.apple.finder QuitMenuItem -bool true
-```
 
-### Battery percentage in menu bar
-
-```bash
+# Battery percentage in menu bar
 defaults write com.apple.menuextra.battery ShowPercent YES
 killall SystemUIServer
 ```
 
-## DNS (Cloudflare)
+## 5. Amethyst — custom layouts
+
+Amethyst uses four layouts: `tall`, `bsp`, `four-corners`, and `center-focus`.
+
+The last two are custom JS layouts from [bryanculver's gist](https://gist.github.com/bryanculver/4c181881cca81d9963f49a77dd5ac127). Preview: [blog post](https://www.bryanculver.com/2024/11/22/amethyst-layouts.html).
+
+### Install custom layouts
+
+```bash
+cp amethyst/four-corners.js ~/Library/Application\ Support/Amethyst/Layouts/
+cp amethyst/center-focus.js ~/Library/Application\ Support/Amethyst/Layouts/
+```
+
+### Set layout order
+
+```bash
+defaults write com.amethyst.Amethyst layouts -array tall bsp four-corners center-focus
+```
+
+### Other Amethyst settings
+
+```bash
+defaults write com.amethyst.Amethyst float-small-windows -bool true
+defaults write com.amethyst.Amethyst floating-is-blacklist -bool true
+defaults write com.amethyst.Amethyst follow-space-thrown-windows -bool true
+defaults write com.amethyst.Amethyst enables-layout-hud -bool true
+defaults write com.amethyst.Amethyst enables-layout-hud-on-space-change -bool true
+```
+
+## 6. DNS (Cloudflare)
 
 ```bash
 networksetup -setdnsservers Wi-Fi 1.1.1.1 1.0.0.1 2606:4700:4700::1111 2606:4700:4700::1001
 ```
 
-## Git Config
+## 7. Git config
 
 ```bash
 git config --global user.name "Surya Raman"
 git config --global user.email "ayrusme@gmail.com"
 ```
 
-## Python
+## 8. Python
 
 ```bash
 pip3 install pipenv
 ```
 
-## Touch ID for sudo
+## 9. Touch ID for sudo
 
 ```bash
 sed "s/^#auth/auth/" /etc/pam.d/sudo_local.template | sudo tee /etc/pam.d/sudo_local
 ```
 
-## Shell Environment (.zshrc additions)
+## 10. Shell environment (.zshrc additions)
 
 ```bash
 # Claude Code output token limit
@@ -174,6 +115,14 @@ export CLAUDE_CODE_MAX_OUTPUT_TOKENS=64000
 . "$HOME/.local/bin/env"
 ```
 
-## Livebook (Elixir notebooks)
+## 11. Manual installs
 
-Download from [livebook.dev](https://livebook.dev/)
+- [Clipy](https://github.com/Clipy/Clipy) — clipboard manager
+- [Livebook](https://livebook.dev/) — Elixir notebooks
+- [CurrentKey Stats](https://apps.apple.com/us/app/currentkey-stats/id1456226992?mt=12) — keyboard stats
+
+## Disable sleep (clamshell mode)
+
+```bash
+sudo pmset disablesleep 1
+```
