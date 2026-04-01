@@ -1,14 +1,16 @@
-# MacOS setup script
+# macOS Setup Script
 
+Last updated: 2026-04-01
 
-## homebrew
-```
+## Homebrew
+
+```bash
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 ```
 
-## terminal stuff
+## Terminal
 
-```
+```bash
 chsh -s /bin/zsh
 brew install --cask iterm2
 brew install romkatv/powerlevel10k/powerlevel10k
@@ -19,113 +21,151 @@ echo 'source ~/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions
 ssh-keygen -t ecdsa -b 521
 ```
 
-## homebrew formulae
+## Homebrew Casks (GUI Apps)
 
-```
+```bash
+brew install --cask iterm2
 brew install --cask google-chrome
-brew install --cask arc
-brew install python
-[Node Version Manager](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating)
-[Clipy](https://github.com/Clipy/Clipy)
-brew install gnupg
-brew tap mongodb/brew
-brew install mongodb-community
 brew install --cask visual-studio-code
-<!-- brew install --cask cursor -->
-<!-- brew install --cask intellij-idea-ce -->
-
-brew services start mongodb-community
-
-brew install mysql
-<!-- brew services start/run mysql -->
-brew install postgresql
-<!-- brew services start/run postgresql -->
-# do not forget to create the default user for postgres
-# password should be "admin"
-<!-- /opt/postgresql@14/bin/createuser -s postgres -->
+brew install --cask cursor
+brew install --cask obsidian
+brew install --cask docker-desktop
+brew install --cask amethyst
+brew install --cask cloudflare-warp
+brew install --cask logi-options+
+brew install --cask meetingbar
 brew install --cask mysqlworkbench
-brew install --cask mysql-shell
-brew install --cask robo-3t
-brew install --cask java
+brew install --cask stats
+brew install --cask claude-code
+brew install --cask blackhole-2ch
+```
 
-brew install --cask postman
-brew install jupyter
+[Clipy](https://github.com/Clipy/Clipy) — clipboard manager (download from GitHub releases)
 
-brew install --cask docker
+## Homebrew Formulae
+
+### Languages & Runtimes
+
+```bash
+brew install python
+brew install node
+brew install asdf
+brew install elixir
+```
+
+[Node Version Manager](https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating)
+
+### CLI Tools
+
+```bash
+brew install gh
+brew install jq
+brew install fzf
+brew install shellcheck
+brew install defaultbrowser
+brew install ical-buddy
+brew install pandoc
+brew install gnupg
+```
+
+### DevOps & Containers
+
+```bash
 brew install kubectl
 brew install kubectx
-brew install fzf
 brew install helm
 brew install minikube
 brew install stern
+```
 
-brew install --cask android-platform-tools
-brew install scrcpy
+### Databases
 
-brew install --cask obsidian
-brew install --cask whatsapp
-brew install --cask amethyst
-brew install --cask cloudflare-warp
-brew install stats
-brew install --cask logi-options+
-brew install defaultbrowser
-brew install meetingbar
-# https://apps.apple.com/us/app/currentkey-stats/id1456226992?mt=12&pt=119982183&ct=currentkey
+```bash
+brew tap mongodb/brew
+brew install mongodb-community
+brew install mysql
+brew install postgresql@14
+```
+
+### AI & ML
+
+```bash
+brew install ollama
+brew install whisper-cpp
+brew install sox
+brew install gemini-cli
 ```
 
 ## UI Tweaks
 
-### Disable the “Are you sure you want to open this application?” dialog
-```
+### Disable "Are you sure you want to open this application?" dialog
+
+```bash
 defaults write com.apple.LaunchServices LSQuarantine -bool false
 ```
 
 ### Disable reordering Spaces based on most recent use
-```
+
+```bash
 defaults write com.apple.dock mru-spaces -bool false
 ```
 
-### keyboard, trackpad, mouse, and menu bar
+### Keyboard, trackpad, mouse
 
-```
-defaults write com.apple.menuextra.battery ShowPercent YES
-killall SystemUIServer
-
-defaults write -g InitialKeyRepeat -int 10 # normal minimum is 15 (225 ms)
-defaults write -g KeyRepeat -int 1 # normal minimum is 2 (30 ms)
-defaults write -g com.apple.mouse.scaling -float 5.0
+```bash
+defaults write -g InitialKeyRepeat -int 10   # normal minimum is 15 (225 ms)
+defaults write -g KeyRepeat -int 1            # normal minimum is 2 (30 ms)
+defaults write -g com.apple.mouse.scaling -float 3.0
 ```
 
-### Quit finder using cmd-q
-```
+### Quit Finder using Cmd-Q
+
+```bash
 defaults write com.apple.finder QuitMenuItem -bool true
 ```
 
-### DNS
+### Battery percentage in menu bar
+
+```bash
+defaults write com.apple.menuextra.battery ShowPercent YES
+killall SystemUIServer
 ```
+
+## DNS (Cloudflare)
+
+```bash
 networksetup -setdnsservers Wi-Fi 1.1.1.1 1.0.0.1 2606:4700:4700::1111 2606:4700:4700::1001
 ```
 
-### git config
+## Git Config
 
-```
-git config user.name “Surya Raman”
-git config user.email “ayrusme@gmail.com”
-```
-
-### pipenv 
-```
-pip3 install  pipenv
+```bash
+git config --global user.name "Surya Raman"
+git config --global user.email "ayrusme@gmail.com"
 ```
 
-### touch id for sudo
-```
-https://apple.stackexchange.com/a/306324
+## Python
 
+```bash
+pip3 install pipenv
+```
+
+## Touch ID for sudo
+
+```bash
 sed "s/^#auth/auth/" /etc/pam.d/sudo_local.template | sudo tee /etc/pam.d/sudo_local
 ```
 
-### disable sleep ( useful in clamshell )
+## Shell Environment (.zshrc additions)
+
+```bash
+# Claude Code output token limit
+export CLAUDE_CODE_MAX_OUTPUT_TOKENS=64000
+
+# uv (Python package manager)
+. "$HOME/.local/bin/env"
 ```
-sudo pmset disablesleep 1
-```
+
+## Livebook (Elixir notebooks)
+
+Download from [livebook.dev](https://livebook.dev/)
