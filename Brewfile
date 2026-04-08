@@ -24,6 +24,9 @@ brew "pandoc"
 brew "gnupg"
 brew "jupyter"
 brew "scrcpy"
+brew "ripgrep"
+brew "coreutils"
+brew "mas"
 
 # DevOps & Containers
 brew "kubectl"
