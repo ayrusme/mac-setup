@@ -73,6 +73,9 @@ defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
 defaults write com.apple.screencapture location -string "${HOME}/Desktop"
 defaults write com.apple.screencapture type -string "png"
 
+# Hide Spotlight menu bar icon
+defaults -currentHost write com.apple.Spotlight MenuItemHidden -int 1
+
 killall SystemUIServer Dock Finder 2>/dev/null || true
 ```
 
