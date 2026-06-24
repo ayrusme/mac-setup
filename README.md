@@ -1,6 +1,6 @@
 # macOS Setup
 
-Last updated: 2026-04-07
+Last updated: 2026-06-24
 
 ## 1. Install Homebrew
 
@@ -65,6 +65,9 @@ defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
 
 # Disable file extension change warning
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+# Keep windows when quitting apps (disables "Close windows when quitting an application")
+defaults write -g NSQuitAlwaysKeepsWindows -bool true
 
 # Finder: list view by default
 defaults write com.apple.finder FXPreferredViewStyle -string "Nlsv"
