@@ -1,0 +1,15 @@
+{
+  "Profiles": [
+    {
+      "Name": "Project — Claude",
+      "Guid": "52680EF6-5F2C-4387-9669-440F8467F484",
+      "Dynamic Profile Parent Name": "Default",
+      "Custom Directory": "Yes",
+      "Working Directory": "/Users/CHANGE_ME/path/to/your/project",
+      "Custom Command": "Yes",
+      "Command": "/bin/zsh -l -i -c 'cd \"/Users/CHANGE_ME/path/to/your/project\" && CLAUDE_CODE_MAX_OUTPUT_TOKENS=64000 claude; exec /bin/zsh -l -i'",
+      "Shortcut": "K",
+      "Close Sessions On End": false
+    }
+  ]
+}

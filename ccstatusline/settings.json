@@ -1,0 +1,82 @@
+{
+  "version": 3,
+  "lines": [
+    [
+      {
+        "id": "1",
+        "type": "model",
+        "color": "cyan"
+      },
+      {
+        "id": "5",
+        "type": "git-branch",
+        "color": "magenta"
+      },
+      {
+        "id": "7",
+        "type": "git-changes",
+        "color": "yellow"
+      }
+    ],
+    [
+      {
+        "id": "3",
+        "type": "context-length",
+        "color": "brightBlack"
+      },
+      {
+        "id": "90727c3e-1ec8-4e4c-8684-699accea4717",
+        "type": "custom-command",
+        "commandPath": "\"$HOME/Documents/repositories/mac-setup/scripts/ccstatusline-context-pct.sh\"",
+        "timeout": 2000,
+        "preserveColors": true
+      },
+      {
+        "id": "35675f2f-c13e-4e61-91fb-962b5fe01d26",
+        "type": "tokens-total",
+        "backgroundColor": "bgYellow"
+      },
+      {
+        "id": "36d06628-e2ce-4fca-8205-f00ac69c50ed",
+        "type": "cache-hit-rate",
+        "backgroundColor": "bgBrightBlue"
+      },
+      {
+        "id": "acf3325d-9791-4179-a2da-cfca6e224491",
+        "type": "session-cost",
+        "backgroundColor": "bgBrightYellow"
+      }
+    ],
+    []
+  ],
+  "flexMode": "full-until-compact",
+  "compactThreshold": 60,
+  "colorLevel": 3,
+  "inheritSeparatorColors": false,
+  "globalBold": false,
+  "gitCacheTtlSeconds": 5,
+  "minimalistMode": false,
+  "powerline": {
+    "enabled": true,
+    "separators": [
+      "\ue0b0"
+    ],
+    "separatorInvertBackground": [
+      false
+    ],
+    "startCaps": [
+      "\ue0b6"
+    ],
+    "endCaps": [
+      "\ue0b4"
+    ],
+    "autoAlign": true,
+    "continueThemeAcrossLines": true,
+    "theme": "onedark"
+  },
+  "defaultPadding": " ",
+  "installation": {
+    "method": "auto-update",
+    "packageManager": "npm"
+  }
+}
